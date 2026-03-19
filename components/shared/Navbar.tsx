@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-white/[0.03] bg-black/60 backdrop-blur-xl">
+    <nav className="fixed top-0 w-full z-50 border-b border-white/3 bg-black/60 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
         
         <Link href="/" className="text-xl font-black tracking-tighter hover:opacity-70 transition-opacity">
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
             <Link 
               key={link.name}
               href={link.href}
-              className="text-[10px] uppercase tracking-[0.3em] font-semibold text-neutral-500 hover:text-white transition-colors"
+              className="text-[10px] uppercase tracking-[0.3em] font-semibold text-white hover:text-neutral-500 transition-colors"
             >
               {link.name}
             </Link>
@@ -43,28 +43,32 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Button Toggle */}
         <button 
-          className="md:hidden space-y-1.5"
+          className={`md:hidden ${isOpen ? 'space-y-0' : 'space-y-1.5'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className={`w-6 h-[1px] bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <div className={`w-6 h-[1px] bg-white transition-all ${isOpen ? 'opacity-0' : ''}`} />
-          <div className={`w-6 h-[1px] bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <div className={`w-6 h-[1px] bg-white  transition-all ${isOpen ? 'rotate-45 translate-y-[1px]' : ''}`} />
+          <div className={`w-6 h-[1px] bg-white  transition-all ${isOpen ? 'hidden' : ''}`} />
+          <div className={`w-6 h-[1px] bg-white  transition-all ${isOpen ? '-rotate-45' : ''}`} />
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`absolute top-16 left-0 w-full bg-black border-b border-white/5 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`md:hidden absolute top-16 left-0 w-full bg-white border-b border-white/5 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="flex flex-col p-6 gap-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-sm uppercase tracking-widest font-bold"
+              className="text-sm uppercase text-black tracking-widest font-bold"
             >
               {link.name}
             </Link>
+
           ))}
+          <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
+            Account
+          </button>
         </div>
       </div>
     </nav>

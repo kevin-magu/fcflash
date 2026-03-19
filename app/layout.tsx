@@ -21,6 +21,7 @@ export default function RootLayout({ children}: { children: React.ReactNode }) {
   return (<html lang="en" className="scroll-smooth">
       <body
         className={`${montserrat.variable} font-sans antialiased bg-black text-white`}
+        suppressHydrationWarning
       >
         <Navbar />
           {children}
