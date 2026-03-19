@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function Hero() {
   return (
-    <main className="relative min-h-[93vh] flex flex-col items-center justify-center overflow-hidden px-6">
+    <main className="relative min-h-[96vh] flex flex-col items-center justify-center overflow-hidden px-6">
       
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-neutral-900/20 via-black to-black -z-10" />
       <Image 

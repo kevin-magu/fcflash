@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
-            Account
+            Join Us
           </button>
         </div>
 
