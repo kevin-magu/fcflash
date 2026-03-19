@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 // Functional component declaration for the About Section
 const AboutSection: React.FC = () => {
   return (
-    <section className="w-full max-w-4xl mx-auto px-6 py-24 flex flex-col items-center justify-center text-center">
+    <section className="w-full max-w-6xl mx-auto px-6 py-0 flex flex-col items-center justify-center text-justify">
       
       <div className="space-y-8">
         {/* Minimalist Location Indicator */}
@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* The Well-Lit, Legible Paragraph */}
-        <p className="text-2xl md:text-4xl text-white font-medium leading-relaxed md:leading-normal tracking-tight">
+        <p className="text-2xl md:text-4xl text-white  font-medium md:text-center leading-relaxed md:leading-normal tracking-tight">
           Founded in the heart of Eastleigh, Flash FC is a professional football club driven by a commitment to excellence. We focus on developing elite talent and playing a fast, precise style of football. Our goal is simple: to elevate the standard of the game in Kenya and compete on the global stage.
         </p>
 
@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => {
       </div>
         <div className='flex justify-center align-center'>
             <Button className="bg-white text-black hover:bg-neutral-900  hover:text-white border border-white/20 mt-6">
-                View Squad & officials
+                Read More
             </Button>
         </div>
     </section>

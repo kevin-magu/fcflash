@@ -30,10 +30,10 @@ const NextMatch: React.FC = () => {
                 <span className="text-neutral-400">City Stars</span>
               </div>
               
-              {/* Optional CTA */}
+              {/* Optional CTA 
               <button className="text-[9px] uppercase tracking-widest font-bold border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition-colors w-fit">
                 Get Tickets
-              </button>
+              </button> */}
             </div>
 
             {/* Match Meta Data (Time, Date, Location) */}

@@ -12,13 +12,13 @@ const Navbar: React.FC = () => {
 
   const navLinks: NavLink[] = [
     { name: "Club", href: "#" },
-    { name: "Squad", href: "#" },
-    { name: "Fixtures", href: "#" },
-    { name: "Store", href: "#" },
+    { name: "Fixtures & Results", href: "#" },
+    { name: "Gallery", href: "#" },
+    { name: "Contacts", href: "#" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-white/3 bg-black/60 backdrop-blur-xl">
+    <nav className="fixed top-0 w-full z-50 border-b border-white/20 bg-black/60 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
         
         <Link href="/" className="text-xl font-black tracking-tighter hover:opacity-70 transition-opacity">
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
 
           ))}
           <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
-            Account
+            Join Us
           </button>
         </div>
       </div>
