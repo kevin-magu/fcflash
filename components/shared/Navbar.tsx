@@ -36,9 +36,11 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
+          <Link href="/register" className="cursor-pointer">
+          <button className="bg-neutral-900 border cursor-pointer border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
             Join Us
           </button>
+          </Link>
         </div>
 
         {/* Mobile Button Toggle */}
@@ -66,9 +68,11 @@ const Navbar: React.FC = () => {
             </Link>
 
           ))}
-          <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
+          <Link href="/register" className="cursor-pointer">
+            <button className="bg-neutral-900 border border-white/10 text-white text-[9px] font-bold px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
             Join Us
           </button>
+          </Link>
         </div>
       </div>
     </nav>

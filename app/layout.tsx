@@ -25,7 +25,7 @@ export default function RootLayout({ children}: { children: React.ReactNode }) {
         suppressHydrationWarning
       >
         <Navbar />
-          <div className="flex-grow">
+          <div className="grow">
             {children}
           </div>
         <Footer />
