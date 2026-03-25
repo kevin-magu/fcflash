@@ -1,28 +1,33 @@
-import { Pool, neonConfig } from '@neondatabase/serverless';
+// lib/prisma.ts   (or src/lib/prisma.ts)
+
+import { PrismaClient } from './generated/prisma/client';   // ← CHANGE THIS to match your output path in schema.prisma
 import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from '@prisma/client';
 import ws from 'ws';
 
-// 1. Mandatory for local development on macOS to reach Neon via WebSockets
+// WebSocket polyfill for local development (macOS + Neon)
 if (process.env.NODE_ENV === 'development') {
-  neonConfig.webSocketConstructor = ws;
+  (global as any).WebSocket = ws;
 }
 
 const prismaClientSingleton = () => {
   const connectionString = process.env.DATABASE_URL;
 
-  if (!connectionString) {
-    throw new Error('❌ DATABASE_URL is missing from .env');
+  console.log("🛠️ Attempting to connect. String length:", connectionString?.length || 0);
+
+  if (!connectionString || connectionString.trim() === '') {
+    throw new Error('❌ DATABASE_URL is empty or missing! Check your .env file.');
   }
 
-  // 2. Initialize the Neon connection pool
-  const pool = new Pool({ connectionString });
-  
-  // 3. Create the adapter (Standard in Prisma 7+)
-  const adapter = new PrismaNeon(pool as any);
+  // Recommended way for Neon in Prisma 7
+  const adapter = new PrismaNeon({
+    connectionString,
+  });
 
-  // 4. Instantiate the client with the adapter
-  return new PrismaClient({ adapter });
+  return new PrismaClient({
+    adapter,
+    // Optional: enable query logging during development
+    // log: process.env.NODE_ENV === 'development' ? ['query', 'error'] : ['error'],
+  });
 };
 
 declare global {
@@ -32,4 +37,6 @@ declare global {
 
 export const prisma = globalThis.prisma ?? prismaClientSingleton();
 
-if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') {
+  globalThis.prisma = prisma;
+}
