@@ -18,7 +18,7 @@ const images: GalleryImage[] = [
 
 const GalleryGrid: React.FC = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-24 md:py-32">
+    <section className="w-full max-w-7xl mx-auto px-6 py-6 md:py-32">
       
       {/* Section Header */}
       <div className="flex flex-col items-center md:items-start mb-12">

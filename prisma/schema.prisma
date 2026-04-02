@@ -12,18 +12,39 @@ datasource db {
   provider = "postgresql"
 }
 
-// Flash FC Identify Model
-
+// Flash FC Identity Model
 model User {
-  id      String @id @default(cuid())
-  role    String
-  name    String
-  gender  String
-  dob     DateTime
-  phone   String
-  email   String @unique
+  id        String   @id @default(cuid())
+  role      String
+  name      String
+  gender    String
+  dob       DateTime
+  phone     String
+  email     String   @unique
   photoUrl  String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// New Fixture Model – matches the new fixture form
+model Fixture {
+  id        String   @id @default(cuid())
+  homeTeam  String   // Home team name
+  awayTeam  String   // Away team name
+  date      DateTime // Date of the match (only date part, time stored separately)
+  time      String   // Time in "HH:MM" format
+  location  String   // Venue / stadium
+  homeScore Int?     @default(0) // optional, for future scoring
+  awayScore Int?     @default(0)
+  status    Status   @default(UPCOMING) // UPCOMING, COMPLETED, CANCELLED
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Status {
+  UPCOMING
+  COMPLETED
+  CANCELLED
 }
