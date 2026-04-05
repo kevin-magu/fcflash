@@ -43,7 +43,7 @@ export default function Register() {
           return `Registration successful! We will review your application and give you feedback via email.`;
         },
         error: (err) => {
-          return err.message || "Something went wrong";
+          return err.message || "Something went wrong. Try again or contact admin.";
         },
       });
     } finally {
