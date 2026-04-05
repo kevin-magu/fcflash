@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                   <Mail size={14} strokeWidth={1.5} />
                   <span>info@flashfc.com</span>
                 </a>
-                <a href="tel:+254700000000" className="flex items-center gap-2 hover:text-amber-600 transition-colors">
+                <a href="tel:+254758844760" className="flex items-center gap-2 hover:text-amber-600 transition-colors">
                   <Phone size={14} strokeWidth={1.5} />
                   <span>+254 758 844 760</span>
                 </a>

@@ -21,7 +21,7 @@ const NavbarAdmin: React.FC = () => {
     <nav className="fixed top-0 w-full z-50 border-b border-amber-200 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
         
-        <Link href="/" className="text-xl text-neutral-800 tracking-tighter hover:text-amber-600 transition-opacity font-black">
+        <Link href="/admin" className="text-xl text-neutral-800 tracking-tighter hover:text-amber-600 transition-opacity font-black">
           FLASH FC ADMINS
         </Link>
 

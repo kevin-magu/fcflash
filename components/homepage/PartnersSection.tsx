@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const PartnersSection = () => {
   // Add new partners here - they will automatically populate the grid
@@ -44,13 +45,16 @@ const PartnersSection = () => {
             </a>
           ))}
 
+
           {/* Become a Partner Button (Integrated into the grid) */}
+          <Link href="/register" className='cursor-pointer'>
           <button className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-dashed border-neutral-200 flex flex-col items-center justify-center text-center p-2 hover:border-black hover:bg-neutral-50 transition-all group">
             <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest leading-tight group-hover:text-black text-neutral-800">
               Become a<br/>Partner
             </span>
             <span className="mt-1 text-lg font-light text-neutral-300 group-hover:text-black">+</span>
           </button>
+          </Link>
         </div>
 
       </div>

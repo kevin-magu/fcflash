@@ -24,17 +24,19 @@ const NextMatch: React.FC = () => {
               <div className="w-12 h-0.5 bg-amber-500 mt-4 hidden md:block" />
             </div>
 
+            {/* Right Column: Match Details Card 
+            
             {/* Right Column: Match Details Card */}
             <div className="w-full md:w-2/3 md:border-l md:border-amber-200 md:pl-16 pt-8 md:pt-0">
-              <div className="flex flex-col space-y-8">
-                
+             
+              <div className="flex flex-col space-y-8">  
                 {/* The Matchup */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                   <div className="flex items-center gap-4 text-3xl md:text-4xl font-black uppercase tracking-tighter">
-                    <span className="text-neutral-800">Flash FC</span>
-                    <span className="text-amber-500 font-light text-xl italic">VS</span>
-                    <span className="text-neutral-500">City Stars</span>
-                  </div>
+                    <span className="text-neutral-800">Matches will be updated soon</span>
+                    <span className="text-amber-500 font-light text-xl italic"></span>
+                    <span className="text-neutral-500"></span>
+                  </div> 
                   
                   {/* Uncomment if you want a vibrant button later */}
                   {/* <button className="text-[9px] uppercase tracking-widest font-bold border border-amber-300 px-4 py-2 hover:bg-amber-500 hover:text-white transition-colors w-fit">
@@ -47,23 +49,23 @@ const NextMatch: React.FC = () => {
                   
                   <div className="flex items-center gap-2.5">
                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                    <span>Sat, 28 Mar 2026</span>
+                    <span></span>
                   </div>
                   
                   <div className="flex items-center gap-2.5">
                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                    <span>15:00 EAT</span>
+                    <span></span>
                   </div>
                   
                   <div className="flex items-center gap-2.5">
                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                    <span>Nyayo Stadium, Nairobi</span>
+                    <span></span>
                   </div>
 
                 </div>
               </div>
             </div>
-
+                    
           </div>
         </div>
       </div>

@@ -19,13 +19,13 @@ const AdminDashboard: React.FC = () => {
   const cards: AdminCard[] = [
     {
       title: 'Registrations',
-      href: '/admin/registrations',
+      href: '/admin/user-approvals',
       icon: UserCheck,
       description: 'Approve new members',
     },
     {
       title: 'Upcoming Matches',
-      href: '/admin/matches',
+      href: '/admin/fixtures',
       icon: Calendar,
       description: 'Manage fixtures',
     },

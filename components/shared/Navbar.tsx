@@ -11,10 +11,10 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const navLinks: NavLink[] = [
-    { name: "Club", href: "#" },
-    { name: "Fixtures & Results", href: "#" },
-    { name: "Gallery", href: "#" },
-    { name: "Contacts", href: "#" },
+    { name: "Club", href: "/about-us" },
+    { name: "Fixtures & Results", href: "fixtures-and-results" },
+    { name: "Gallery", href: "/club-gallery" },
+    { name: "Contacts", href: "contact-us" },
   ];
 
   return (
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <Link href="/register" className="cursor-pointer">
-            <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold text-[9px] px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 border-none">
+            <button className="cursor-pointer bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold text-[9px] px-6 py-2.5 rounded-full uppercase tracking-[0.2em] hover:shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 border-none">
               Join Us
             </button>
           </Link>

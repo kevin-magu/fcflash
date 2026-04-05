@@ -22,7 +22,7 @@ model User {
   phone     String
   email     String   @unique
   photoUrl  String?
-
+  status    UserStatus @default(PENDING)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -41,6 +41,12 @@ model Fixture {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+enum UserStatus {
+  PENDING
+  ACCEPTED
+  REJECTED 
 }
 
 enum Status {

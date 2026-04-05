@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
+import Link from 'next/link';
 
 const AboutSection: React.FC = () => {
   return (
@@ -24,9 +25,11 @@ const AboutSection: React.FC = () => {
       </div>
       
       <div className='flex justify-center align-center'>
+        <Link href="/about-us" className="cursor-pointer">
         <Button className="bg-black text-white hover:bg-neutral-800 border border-neutral-200 mt-6">
           Read More
         </Button>
+        </Link>
       </div>
     </section>
   );

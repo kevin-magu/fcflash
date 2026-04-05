@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import flashFcLogo from '../../public/fcflash.png';
 import Button from '../ui/Button';
+import Link from 'next/link';
 
 
 const VIDEO_SOURCES = [
@@ -70,13 +71,17 @@ export default function Hero() {
           </p>
 
           <div className="pt-6 flex flex-col sm:flex-row items-center gap-4">
+            <Link href="/register" className="cursor-pointer">
             <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold hover:scale-105 transition-transform duration-300 border-none px-8">
               Become a Sponsor
             </Button>
+            </Link>
             
+            <Link href="/about-us" className="cursor-pointer">
             <Button className="bg-transparent border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300 px-8">
               The Vision
             </Button>
+            </Link>
           </div>
         </section>
       </div>
