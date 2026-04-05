@@ -9,7 +9,9 @@ import { registerUser } from '@/actions/user/registerUser';
 export default function Register() {
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [photoFile, setPhotoFile] = useState<File | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false); // new state
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [selectedRole, setSelectedRole] = useState("");
+
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -70,7 +72,13 @@ export default function Register() {
               I am registering as
             </label>
             <div className="relative">
-              <select name='role' required defaultValue="" className="w-full appearance-none bg-white border border-amber-200 p-3 rounded-xl text-sm outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all cursor-pointer tracking-wide text-neutral-800">
+              <select 
+                name='role' 
+                required 
+                defaultValue="" 
+                onChange={(e) => setSelectedRole(e.target.value)}
+                className="w-full appearance-none bg-white border border-amber-200 p-3 rounded-xl text-sm outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all cursor-pointer tracking-wide text-neutral-800"
+              >
                 <option value="" disabled>Select role</option>
                 <option value="player">Player</option>
                 <option value="official">Official</option>
@@ -119,13 +127,15 @@ export default function Register() {
 
           {/* 4. Passport Photo Upload - added required, changed image to object-contain */}
           <div className="space-y-4">
-            <label className="text-[10px] uppercase tracking-widest text-neutral-600 font-bold ml-1">Identity Verification</label>
+            <label className="text-[10px] uppercase tracking-widest text-neutral-600 font-bold ml-1">
+              Identity Verification {selectedRole === "sponsor" && "(Optional for sponsors)"}
+            </label>
             <div className="group relative w-full h-32 border-2 border-dashed border-amber-300 rounded-2xl flex flex-col items-center justify-center hover:border-amber-500 transition-all cursor-pointer bg-white/50 hover:bg-white/80 overflow-hidden">
               <input
                 id="photo-upload"
                 name="photo"
                 type="file"
-                required
+                required={selectedRole !== "sponsor"} 
                 className="absolute inset-0 opacity-0 cursor-pointer z-10"
                 accept="image/*"
                 onChange={handlePhotoChange}
